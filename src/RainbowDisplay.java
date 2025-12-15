@@ -18,21 +18,18 @@ public class RainbowDisplay extends JPanel {
         int radius = 150;
 
         ColorComponent red = new RedColor();
-        ColorComponent orange = new OrangeDecorator(red);
-        ColorComponent yellow = new YellowDecorator(orange);
-        ColorComponent green = new GreenDecorator(yellow);
+        ColorComponent orange = new OrangeDecorator(new RedColor());
+        ColorComponent yellow = new YellowDecorator(new OrangeDecorator(new RedColor()));
+        ColorComponent green = new GreenDecorator(new YellowDecorator(new OrangeDecorator(new RedColor())));
+
         ColorComponent blue = new BlueColor();
-        ColorComponent cyan = new CyanDecorator(blue);
-        ColorComponent purple = new PurpleDecorator(blue);
+        ColorComponent cyan = new CyanDecorator(new BlueColor());
+        ColorComponent purple = new PurpleDecorator(new RedColor());
 
         ColorComponent[] colors = {red, orange, yellow, green, cyan, blue, purple};
 
         for (int i = 0; i < colors.length; i++) {
-            BufferedImage temp = new BufferedImage(1, 1, BufferedImage.TYPE_INT_RGB);
-            Graphics2D tempG = temp.createGraphics();
-            colors[i].draw(tempG, 0, 0, 1, 1);
-            Color awtColor = tempG.getColor();
-            tempG.dispose();
+            Color awtColor = colors[i].getColor();
 
             Graphics2D g2d = (Graphics2D) g;
             g2d.setColor(awtColor);
