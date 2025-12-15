@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Graphics;
 
 public class CyanDecorator extends ColorDecorator {
     public CyanDecorator(ColorComponent color) {
@@ -6,12 +7,10 @@ public class CyanDecorator extends ColorDecorator {
     }
 
     @Override
-    public Color getColor() {
-        Color baseColor = super.getColor();
-        return new Color(
-                Math.max(0, baseColor.getRed() - 100),
-                255,
-                255
-        );
+    public void draw(Graphics g, int x, int y, int width, int height) {
+        super.draw(g, x, y, width, height);
+
+        g.setColor(Color.CYAN);
+        g.fillRect(x, y, width, height);
     }
 }

@@ -9,10 +9,8 @@ public class RainbowDisplay extends JPanel {
         super.paintComponent(g);
 
         setBackground(Color.WHITE);
-
         int width = getWidth();
         int height = getHeight();
-
         int centerX = width / 2;
         int centerY = height + 100;
         int radius = 150;

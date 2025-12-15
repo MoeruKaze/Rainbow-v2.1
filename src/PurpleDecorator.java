@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Graphics;
 
 public class PurpleDecorator extends ColorDecorator {
     public PurpleDecorator(ColorComponent color) {
@@ -6,12 +7,11 @@ public class PurpleDecorator extends ColorDecorator {
     }
 
     @Override
-    public Color getColor() {
-        Color baseColor = super.getColor();
-        return new Color(
-                Math.min(140, baseColor.getRed() + 50),
-                Math.max(0, baseColor.getGreen() - 150),
-                Math.min(255, baseColor.getBlue() + 100)
-        );
+    public void draw(Graphics g, int x, int y, int width, int height) {
+        super.draw(g, x, y, width, height);
+
+
+        g.setColor(new Color(128, 0, 128));
+        g.fillRect(x, y, width, height);
     }
 }
