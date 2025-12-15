@@ -36,9 +36,9 @@ public class RainbowDisplay extends JPanel {
 
             Graphics2D g2d = (Graphics2D) g;
             g2d.setColor(awtColor);
-            g2d.setStroke(new BasicStroke(15));
+            g2d.setStroke(new BasicStroke(50));
 
-            int arcRadius = radius + (colors.length - 1 - i) * 15;
+            int arcRadius = radius + (colors.length - 1 - i) * 50;
             g2d.drawArc(centerX - arcRadius, centerY - arcRadius,
                     arcRadius * 2, arcRadius * 2, 0, 180);
         }
