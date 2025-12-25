@@ -10,6 +10,6 @@ public class PurpleDecorator extends ColorDecorator {
     public void draw(Graphics g, int x, int y, int width, int height) {
         super.draw(g, x, y, width, height);
         g.setColor(new Color(128, 0, 128));
-        g.fillRect(x, y, width, height);
+        g.fillArc(x, y, width, height, 0, 180);
     }
 }

@@ -27,16 +27,13 @@ public class RainbowDisplay extends JPanel {
 
         for (int i = 0; i < colors.length; i++) {
             int arcRadius = radius + (colors.length - 1 - i) * 50;
+
             int arcX = centerX - arcRadius;
             int arcY = centerY - arcRadius;
             int arcWidth = arcRadius * 2;
             int arcHeight = arcRadius * 2;
-            colors[i].draw(g, arcX, arcY, arcWidth, arcHeight);
-            Graphics2D g2d = (Graphics2D) g;
-            g2d.setStroke(new BasicStroke(50));
 
-            g2d.drawArc(centerX - arcRadius, centerY - arcRadius,
-                    arcRadius * 2, arcRadius * 2, 0, 180);
+            colors[i].draw(g, arcX, arcY, arcWidth, arcHeight);
         }
     }
 
