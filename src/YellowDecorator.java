@@ -9,7 +9,6 @@ public class YellowDecorator extends ColorDecorator {
     @Override
     public void draw(Graphics g, int x, int y, int width, int height) {
         super.draw(g, x, y, width, height);
-
         g.setColor(Color.YELLOW);
         g.fillRect(x, y, width, height);
     }
