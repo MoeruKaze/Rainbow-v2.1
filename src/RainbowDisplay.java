@@ -19,10 +19,9 @@ public class RainbowDisplay extends JPanel {
         ColorComponent orange = new OrangeDecorator(new RedColor());
         ColorComponent yellow = new YellowDecorator(new OrangeDecorator(new RedColor()));
         ColorComponent green = new GreenDecorator(new YellowDecorator(new OrangeDecorator(new RedColor())));
-
         ColorComponent blue = new BlueColor();
         ColorComponent cyan = new CyanDecorator(new BlueColor());
-        ColorComponent purple = new PurpleDecorator(new RedColor());
+        ColorComponent purple = new PurpleDecorator(new BlueColor());
 
         ColorComponent[] colors = {red, orange, yellow, green, cyan, blue, purple};
 
